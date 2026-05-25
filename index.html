@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f9;
+        color: #333;
+    }
+    header {
+        background: #4a90e2;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    .card {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+        margin: 0;
+        padding: 15px;
+        background: #e8f0fe;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .content {
+        display: none;
+        padding: 15px;
+        line-height: 1.6;
+    }
+    .sentence {
+        margin-bottom: 10px;
+    }
+    .hindi {
+        color: #444;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Recipe</h1>
+</header>
+<div class="container"><div class="card">
+    <h2 onclick="toggle(this)">Vadapav Recipe</h2>
+    <div class="content">
+        <div class="sentence">Tel,
+Ajvaine,
+jeera,
+rai,
+Kadi patta,
+Pyaaz,
+(dhaniya pudinana lahsun adrak mirchi ka paste),
+Aalooo,
+Haldi &
+Namak.
+</div>
+    </div>
+</div>
+
+</div><script>
+function toggle(element) {
+    const allContents = document.querySelectorAll(".content");
+
+    // पहले सभी बंद करो
+    allContents.forEach(content => {
+        if (content !== element.nextElementSibling) {
+            content.style.display = "none";
+        }
+    });
+
+    // फिर क्लिक वाला toggle करो
+    const content = element.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+</script></body>
+</html>
