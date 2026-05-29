@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recipe</title>
+<title>Recipes</title>
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -10,17 +12,20 @@
         background: #f4f6f9;
         color: #333;
     }
+
     header {
         background: #4a90e2;
         color: white;
         padding: 20px;
         text-align: center;
     }
+
     .container {
         max-width: 900px;
         margin: auto;
         padding: 20px;
     }
+
     .card {
         background: white;
         margin-bottom: 15px;
@@ -28,35 +33,45 @@
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+
     .card h2 {
         margin: 0;
         padding: 15px;
         background: #e8f0fe;
         cursor: pointer;
         font-size: 18px;
+        transition: 0.3s;
     }
+
+    .card h2:hover {
+        background: #d4e4ff;
+    }
+
     .content {
         display: none;
         padding: 15px;
-        line-height: 1.6;
+        line-height: 1.8;
     }
+
     .sentence {
         margin-bottom: 10px;
     }
-    .hindi {
-        color: #444;
-        font-weight: bold;
-    }
 </style>
 </head>
+
 <body>
+
 <header>
-    <h1>Recipe</h1>
+    <h1>My Recipes</h1>
 </header>
-<div class="container"><div class="card">
-    <h2 onclick="toggle(this)">Vadapav Recipe</h2>
-    <div class="content">
-        <div class="sentence">Tel,
+
+<div class="container">
+
+    <!-- Recipe 1 -->
+    <div class="card">
+        <h2 onclick="toggle(this)">Vadapav Recipe</h2>
+        <div class="content">
+            <div class="sentence">Tel,
 Ajvaine,
 jeera,
 rai,
@@ -64,26 +79,54 @@ Kadi patta,
 Pyaaz,
 (dhaniya pudina lahsun adrak mirchi ka paste),
 Aaloo,
-Haldi &
+Haldi & 
 Namak.
 </div>
     </div>
 </div>
 
+    <!-- Recipe 2 -->
+    <div class="card">
+        <h2 onclick="toggle(this)">Chawal Fry Recipe</h2>
+        <div class="content">
+            <div class="sentence">Oil (tel)
+Mustard seeds (Rai),
+Cumin seeds (jeera),
+Curry leaves (curry patta),
+Onion (Pyaaz),
+Tomato (Tamatar),
+Rice (chawal),
+Red chilli powder (Lal mirch powder),
+Turmeric (Haldi),
+Salt (Namak),
+Green chilli (Hari mirchi) & 
+Fresh coriander (Dhaniya).
+</div>
+   </div>
+</div>
+
 </div><script>
 function toggle(element) {
+
     const allContents = document.querySelectorAll(".content");
 
-    // पहले सभी बंद करो
+    // Sab band karo
     allContents.forEach(content => {
         if (content !== element.nextElementSibling) {
             content.style.display = "none";
         }
     });
 
-    // फिर क्लिक वाला toggle करो
+    // Click wali recipe open/close karo
     const content = element.nextElementSibling;
-    content.style.display = (content.style.display === "block") ? "none" : "block";
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
 }
-</script></body>
+</script>
+
+</body>
 </html>
